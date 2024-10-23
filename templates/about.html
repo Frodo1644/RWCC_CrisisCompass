@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrisisCompass | About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand-title">CrisisCompass</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('disasters_page') }}">Disasters</a></li>
+            <li><a href="{{ url_for('helpline') }}">Helpline</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="container">
+            <section class="about">
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/about.png') }}">
+                </div>
+                <div class="about-content">
+                    <h1>What is CrisisCompass?</h1>
+                    <p>
+                        CrisisCompass is a one stop place to know it all about disasters, precautions and solutions. We provide information about various disasters like Earthquake, Flood, Hurricane and Wildfire. We also provide information about the precautions that can be taken to prevent these disasters and the solutions that can be implemented to overcome these disasters.
+                    </p>
+                    <br>
+                    <br>
+                    <p>Whether you're facing a natural disaster, public health emergency, personal crisis or any other type of emergency, CrisisCompass offers easy access to important resources, including evacuation routes, emergency contact numbers, emergency shelters, safety tips, and live updates. With an easy-to-use interface, CrisisCompass helps you find the information you need quickly and easily, so you can stay safe and informed during an emergency, no matter where you are, or what type of emergency you're facing.</p>
+
+                </div>
+            </section>
+        </div>
+      </section>
+      <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>

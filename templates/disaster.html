@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrisisCompass | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/disaster_page.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand-title">CrisisCompass</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('disasters_page') }}">Disasters</a></li>
+            <li><a href="{{ url_for('helpline') }}">Helpline</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section class="hero">
+        <img src="{{ url_for('static', filename='images/hero.png') }}" alt="">
+        <div class="hero-cont">
+            
+        <h1>Look up information, about a disaster</h1>
+        <p>Choose the disaster you want to know about below</p>
+
+        <div class="choose-box">
+            <div class="container">
+              <p class="choosep">Choose a disaster:</p>
+              <select id="disaster-select">
+                <option value="" disabled selected>Disasters</option>
+                <option value="earthquake">Earthquake</option>
+                <option value="flood">Flood</option>
+                <option value="hurricane">Hurricane</option>
+                <option value="tornado">Tornado</option>
+                <option value="wildfire">Wildfire</option>
+                <option value="tsunami">Tsunami</option>
+                <option value="volcano">Volcano</option>
+                <option value="drought">Drought</option>
+                <option value="landslide">Landslide</option>
+                <option value="pandemic">Pandemic</option>
+            </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script>
+      document.getElementById('disaster-select').addEventListener('change', function() {
+          const selectedDisaster = this.value;
+          console.log(selectedDisaster);
+          window.location.href = `/disaster_info/${selectedDisaster}`;
+      });
+  </script>
+</body>
+</html>

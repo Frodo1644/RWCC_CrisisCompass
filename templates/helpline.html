@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrisisCompass | Helpline</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/helpline.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="brand-title">CrisisCompass</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('disasters_page') }}">Disasters</a></li>
+            <li><a href="{{ url_for('helpline') }}">Helpline</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <section class="helpline">
+            <div class="accordion">
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='images/volcano.png') }}" alt="Accordion Image">
+                </div>
+                <div class="accordion-text">
+                    <div class="title">HELPLINE</div>
+                    <ul class="faq-text">
+                        <li>
+                            <div class="question-arrow">
+                                <span class="question">India</span>
+                                <i class="bx bxs-chevron-down arrow"></i>
+                            </div>
+                            <p>
+                                National Emergency Number: 112 (All-in-one emergency number)<br>
+                                Police: 100<br>
+                                Ambulance: 102<br>
+                                Fire: 101<br>
+                                Disaster Management Services: 108<br>
+                                Women’s Helpline: 1091<br>
+                                Child Helpline: 1098<br>
+                                Anti-Terrorism Helpline: 1090
+                            </p>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <div class="question-arrow">
+                                <span class="question">United States</span>
+                                <i class="bx bxs-chevron-down arrow"></i>
+                            </div>
+                            <p>
+                                Emergency Number: 911 (Police, Fire, Ambulance)<br>
+                                Disaster Distress Helpline: 1-800-985-5990<br>
+                                Poison Control: 1-800-222-1222<br>
+                                National Domestic Violence Hotline: 1-800-799-7233<br>
+                                Child Abuse Hotline: 1-800-422-4453<br>
+                                Mental Health Helpline: 988
+                            </p>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <div class="question-arrow">
+                                <span class="question">Australia</span>
+                                <i class="bx bxs-chevron-down arrow"></i>
+                            </div>
+                            <p>
+                                Emergency Number: 000 (Police, Fire, Ambulance)<br>
+                                State Emergency Service (Flood, Storm): 132 500<br>
+                                Lifeline (Crisis Support): 13 11 14<br>
+                                Poison Information Centre: 13 11 26<br>
+                                National Sexual Assault, Domestic & Family Violence Counselling: 1800 737 732
+                            </p>
+                            <span class="line"></span>
+                        </li>
+                        <li>
+                            <div class="question-arrow">
+                                <span class="question">Germany</span>
+                                <i class="bx bxs-chevron-down arrow"></i>
+                            </div>
+                            <p>
+                                Emergency Number: 112 (Police, Fire, Ambulance)<br>
+                                Poison Emergency Hotline: +49 30 19240<br>
+                                Violence Against Women Hotline: 08000 116 016<br>
+                                Child Helpline: 116 111<br>
+                                Psychological Crisis Hotline: 0800 111 0 111 / 0800 111 0 222
+                            </p>
+                            <span class="line"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+    
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+    <script>
+        let li = document.querySelectorAll(".faq-text li");
+        for (var i = 0; i < li.length; i++) {
+            li[i].addEventListener("click", (e) => {
+                let clickedLi;
+                if (e.target.classList.contains("question-arrow")) {
+                    clickedLi = e.target.parentElement;
+                } else {
+                    clickedLi = e.target.parentElement.parentElement;
+                }
+                clickedLi.classList.toggle("showAnswer");
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/disaster.css') }}">
+    <title>CrisisCompass | {{ disaster.capitalize() }}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand-title">CrisisCompass</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('disasters_page') }}">Disasters</a></li>
+            <li><a href="{{ url_for('helpline') }}">Helpline</a></li>
+          </ul>
+        </div>
+      </nav>
+    <section class="hero">
+        <div class="container">
+          <div class="about-image">
+              {% if image %}
+                  <img src="{{ image }}" alt="{{ disaster.capitalize() }} Image">
+              {% endif %}
+          </div>
+            <section class="about">
+                <div class="about-content">
+                    <!-- <h1>{{ disaster.capitalize() }}</h1> -->
+                        {{ info|safe }}
+                </div>
+            </section>
+        </div>
+      </section>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
